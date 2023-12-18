@@ -42,16 +42,16 @@ while True:
     # Debugging to see if the timer value was what we were expecting from the choregraphe script
     #print(timer)
     # Opens file that the motion detection uses to turn on and off the live feed
-    with open('C:\\Users\\Edward\\PycharmProjects\\testwithopencv2\\red.txt', "w") as file:
+    with open('red.txt', "w") as file:
         # Writes to the file what the nao sends across (should be a one at this point)
         file.write(client_socket.recv(1024).decode())
     # Opens the file that the motion detection sends its output variables to
-    with open('C:\\Users\\Edward\\PycharmProjects\\testwithopencv2\\move.txt', "r") as file1:
+    with open('move.txt', "r") as file1:
         read1 = file1.read()
     # Checks if the random number has been counted too yet
     while int(timer) != x:
         # Repeat opening the file to check if the output has changed
-        with open('C:\\Users\\Edward\\PycharmProjects\\testwithopencv2\\move.txt', "r") as file2:
+        with open('move.txt', "r") as file2:
             read2 = file2.read()
         # If the file hasn't changed increment x by 0.5 and delay the code for 0.5 seconds
         if read1 == read2:
